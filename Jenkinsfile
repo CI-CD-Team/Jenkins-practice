@@ -1,6 +1,6 @@
 pipeline {
    agent 
-   
+
 tools{nodejs "node"}
 
    environment{
@@ -21,16 +21,10 @@ tools{nodejs "node"}
       }
 
       stage("deploy") {
-        when{
-          expression {
-            currentBuild.result == null || currentBuild.result == 'Success'
-          }
-
+        steps{
+          echo "able to deploy..."
         }
-        steps {
-          sh 'make publish'
-
-        }
+       
       }
 
    }
