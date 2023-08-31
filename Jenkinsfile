@@ -18,8 +18,8 @@ pipeline {
       }
 
       stage("deploy") {
-        steps {
-         echo 'App is ready to deploy..'
+        steps{
+          echo "ready to deploy"
         }
       }
 
