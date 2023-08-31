@@ -23,8 +23,15 @@ pipeline {
       }
 
       stage("deploy") {
+        when{
+          expression {
+            currentBuild.result == null || currentBuild.result == 'Success'
+          }
+
+        }
         steps {
-         echo 'App is ready to deploy..'
+          sh 'make publish'
+
         }
       }
 
