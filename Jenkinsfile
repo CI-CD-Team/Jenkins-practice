@@ -1,26 +1,23 @@
 pipeline {
    agent any
 
-tools{nodejs "node"}
-
    stages {
       stage("build") {
         steps {
-          sh 'npm install'
+          echo 'building our app to test...'
         }
       }
 
       stage("test") {
         steps {
-          echo "ready to test..."
+         echo 'testing our app...'
         }
       }
 
       stage("deploy") {
-        steps{
-          echo "able to deploy..."
+        steps {
+         echo 'deploying our app...'
         }
-       
       }
 
    }
