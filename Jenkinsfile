@@ -3,10 +3,6 @@ pipeline {
 
 tools{nodejs "node"}
 
-   environment{
-    CI = 'true'
-   }
-
    stages {
       stage("build") {
         steps {
@@ -16,6 +12,7 @@ tools{nodejs "node"}
 
       stage("test") {
         steps {
+          sh 'npm install'
          sh 'npm run test'
         }
       }
