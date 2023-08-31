@@ -1,22 +1,30 @@
 pipeline {
-   agent any
+   agent {
+    docker{
+      image 'node:6-alpine'
+            args '-p 3000:3000'
+    }
+   }
+   environment{
+    CI = 'true'
+   }
 
    stages {
       stage("build") {
         steps {
-          echo 'building our app to test...'
+          sh 'npm install'
         }
       }
 
       stage("test") {
         steps {
-         echo 'testing our app...'
+         sh 'npm run test'
         }
       }
 
       stage("deploy") {
         steps {
-         echo 'deploying our app...'
+         echo 'App is ready to deploy..'
         }
       }
 
