@@ -13,7 +13,7 @@ tools{nodejs "node"}
       stage("test") {
         steps {
           sh 'npm install'
-         sh 'npm run test'
+         sh 'npm test'
         }
       }
 
