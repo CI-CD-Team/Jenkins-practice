@@ -1,10 +1,8 @@
 pipeline {
-   agent 
+   agent any
    
    tools {nodejs "node"}
-   environment{
-    CI = 'true'
-   }
+  
 
    stages {
       stage("build") {
@@ -15,7 +13,7 @@ pipeline {
 
       stage("test") {
         steps {
-         sh 'npm run test'
+         echo "no test implemented.."
         }
       }
 
